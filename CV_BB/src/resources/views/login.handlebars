@@ -1,0 +1,63 @@
+<div class="main">
+
+  <form action="login" method="POST" class="form" id="form-1">
+    <h3 class="heading">Log in</h3>
+    <p class="desc"> Thiên nhiên và sách thuộc về những đôi mắt đã thấy chúng.</p>
+    <div class="spacer"></div>
+
+    <div class="form-group">
+      <label for="email" class="form-label" id="username">Username</label>
+      <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control"
+        value="{{csrf}}">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="password" class="form-label" id="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+    <button onclick="login()">Login</button>
+  </form>
+</div>
+<script>
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function login() {
+    $.ajax({
+      url: '/login',
+      method: 'POST'.
+        data : {
+      username: $('#username').val(),
+      password: $('#password').vla(),
+    }
+    }).then(data =>){
+    console.log(data);
+    setCookie('token',data.token,1);
+  }.catch (err) {
+    console.log(err);
+  }
+  }
+</script>

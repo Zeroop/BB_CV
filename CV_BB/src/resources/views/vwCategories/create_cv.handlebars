@@ -1,0 +1,70 @@
+ {{#if this.empty}}
+    <h1>Khong co du lieu</h1>
+    {{else}}
+        {{#each this.catagories}}
+        <h1>{{user_id}}</h1>
+        <h2>{{user_name}}</h2>
+        <h3>{{user_password}}</h3>
+        {{/each}}
+{{/if}}
+<h1>alo</h1> 
+
+<div style="width: 500px; margin
+;100px;margin:auto;">
+<form>
+{{!--   upload image --}}
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Upload Your Image</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+{{!--   full name --}}
+ <div class="form-group">
+    <label for="exampleFormControlInput1">Full Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nguyen Trung Nguyen">
+  </div>
+ {{!--  email --}}
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+{{!--   location --}}
+  <div  class="form-group">
+    <label for="exampleFormControlSelect1">Your City</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Ha Noi</option>
+      <option>Ho Chi Minh</option>
+      <option>Da Nang</option>
+    </select>
+  </div>
+{{!--   Old company --}}
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Old company</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+    <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Day join">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Day left">
+    </div>
+
+  </div>
+  <div class="row mt-5">
+        <div class="col-md-6 offset-3 mt-5">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                   Add tag name
+                </div>
+                <div class="card-body">
+                    <label>Tags :</label>
+                    <input type="text" data-role="tagsinput" name="tags" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+{{!--     create cv --}}
+<button style="margin-left:200px;margin-top:15px" type="button" class="btn btn-outline-primary">Create CV</button>
+</form>
+</div>
+ 
